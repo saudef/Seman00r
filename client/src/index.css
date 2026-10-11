@@ -899,18 +899,62 @@ video {
   background: var(--surface-2);
   transform: translateY(-2px);
 }
-.signal__thumb,
+.signal__area {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 188px;
+  padding: 22px 24px 26px;
+}
+.signal__area-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.signal__area-top .mono {
+  color: var(--ink-3);
+  font-size: 13px;
+}
+.signal__area-title {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(23px, 2vw, 29px);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  font-variation-settings: "opsz" 36;
+}
+[dir="rtl"] .signal__area-title {
+  font-size: clamp(23px, 2.1vw, 30px);
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+.signal__arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.signal__area:hover .signal__arrow {
+  background: #fff;
+  color: var(--canvas);
+}
 .signal__icon {
   flex: 0 0 auto;
-  width: 64px;
-  height: 64px;
-  border-radius: 14px;
   overflow: hidden;
-  background: var(--canvas-deep);
   display: grid;
   place-items: center;
 }
-.signal__thumb img,
 .signal__icon img {
   width: 100%;
   height: 100%;
@@ -918,34 +962,8 @@ video {
   display: block;
   transition: transform 0.3s ease;
 }
-.signal__area:hover .signal__thumb img,
 .signal__field:hover .signal__icon img {
   transform: scale(1.06);
-}
-.signal__text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  min-width: 0;
-}
-.signal__text .mono {
-  color: var(--ink-4);
-}
-.signal__text strong {
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 1.35;
-}
-.signal__arrow {
-  margin-inline-start: auto;
-  color: var(--ink-3);
-  flex: 0 0 auto;
-  display: grid;
-  place-items: center;
-  transition: color 0.2s ease;
-}
-.signal__area:hover .signal__arrow {
-  color: var(--ink);
 }
 .signal__field {
   flex-direction: column;
@@ -2804,6 +2822,8 @@ video {
   }
   .signal__area {
     min-height: 0;
+    gap: 22px;
+    padding: 18px 20px 20px;
   }
   .footer__top {
     grid-template-columns: 1fr;

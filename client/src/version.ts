@@ -19,7 +19,7 @@ export const versions = [
         lines: "1-end",
         before: "Two rows of text chips",
         after:
-          "Four focus-area tiles with their illustrations and six field tiles with Semanoor's line icons (client/src/data/fieldIcons.ts)",
+          "Four text-only focus-area tiles (number, serif title, arrow) and six field tiles with Semanoor's line icons (client/src/data/fieldIcons.ts)",
       },
       {
         file: "client/src/components/Insights.tsx",

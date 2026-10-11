@@ -6,7 +6,7 @@ import { requestExplore } from "@/lib/motion";
 import { Arrow, Mono } from "./ui-kit";
 
 export default function SignalStrip() {
-  const { copy, content } = useLanguage();
+  const { copy } = useLanguage();
   return (
     <section className="signal" aria-label={copy.hero.focusLabel}>
       <div className="container">
@@ -19,30 +19,22 @@ export default function SignalStrip() {
             </a>
           </div>
           <ul className="signal__areas">
-            {copy.ecosystem.areas.map((area, index) => {
-              const visual = content.visuals.focus[index];
-              return (
-                <li key={area.number}>
-                  <Link
-                    href={`/solutions/${solutionCatalog[index].slug}`}
-                    className="signal__area"
-                  >
-                    <span className="signal__thumb" aria-hidden="true">
-                      {visual?.image && (
-                        <img src={visual.image} alt="" decoding="async" />
-                      )}
-                    </span>
-                    <span className="signal__text">
-                      <Mono>{area.number}</Mono>
-                      <strong>{area.title}</strong>
-                    </span>
+            {copy.ecosystem.areas.map((area, index) => (
+              <li key={area.number}>
+                <Link
+                  href={`/solutions/${solutionCatalog[index].slug}`}
+                  className="signal__area"
+                >
+                  <span className="signal__area-top">
+                    <Mono>{area.number}</Mono>
                     <span className="signal__arrow" aria-hidden="true">
-                      <Arrow size={16} />
+                      <Arrow size={18} />
                     </span>
-                  </Link>
-                </li>
-              );
-            })}
+                  </span>
+                  <strong className="signal__area-title">{area.title}</strong>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="signal__group">
