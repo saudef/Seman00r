@@ -81,7 +81,11 @@ export default function Explorer() {
               }}
             >
               <div className="explore__head">
-                <Mono>EXPLORATION / 0{index + 1}</Mono>
+                {isRTL ? (
+                  <span className="label">استكشاف · 0{index + 1}</span>
+                ) : (
+                  <Mono>EXPLORATION / 0{index + 1}</Mono>
+                )}
                 <span className="pill pill--status">{explorer.pathLabel}</span>
               </div>
               {visual.image && (

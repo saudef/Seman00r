@@ -23,7 +23,7 @@ export default function FocusModules() {
           {copy.ecosystem.areas.map((area, index) => {
             const isJawani = index === 3;
             const image = isJawani
-              ? "/manus-storage/jawani-pay-card_e5551fbd.webp"
+              ? "/site-assets/jawani-pay-card.webp"
               : visuals[index].image;
             const alt = isJawani
               ? isRTL
@@ -44,14 +44,25 @@ export default function FocusModules() {
                 </div>
                 {image && (
                   <div
-                    className={`module__art ${isJawani ? "module__art--contain" : ""}`}
+                    className={`module__art ${isJawani ? "module__art--card" : ""}`}
                   >
-                    <img
-                      src={image}
-                      alt={alt}
-                      loading="lazy"
-                      decoding="async"
-                    />
+                    {isJawani ? (
+                      <div className="bankcard">
+                        <img
+                          src={image}
+                          alt={alt}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                    ) : (
+                      <img
+                        src={image}
+                        alt={alt}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    )}
                   </div>
                 )}
                 <h3 className="display-3 module__title" id={`focus-${index}`}>
@@ -71,7 +82,11 @@ export default function FocusModules() {
                     {copy.ecosystem.areaLink}
                     <Arrow size={16} />
                   </Link>
-                  <Mono>{isRTL ? "FOCUS AREA" : "FOCUS AREA"}</Mono>
+                  {isRTL ? (
+                    <span className="label">محور</span>
+                  ) : (
+                    <Mono>FOCUS AREA</Mono>
+                  )}
                 </div>
               </Reveal>
             );

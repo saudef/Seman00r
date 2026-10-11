@@ -143,7 +143,11 @@ export default function SmartBookShowcase({
                   "From a book holding knowledge to an expert guiding learning"
                 )}
               </span>
-              <Mono>CONCEPT</Mono>
+              {isRTL ? (
+                <span className="label">تصوّر مفاهيمي</span>
+              ) : (
+                <Mono>CONCEPT</Mono>
+              )}
             </figcaption>
           </figure>
         </div>

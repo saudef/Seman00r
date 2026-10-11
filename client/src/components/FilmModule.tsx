@@ -58,7 +58,11 @@ export default function FilmModule() {
         </div>
         <div className="film__meta">
           <p className="label" id="film-title">
-            <Mono>SEMANOOR / 30s</Mono>
+            {isRTL ? (
+              <span className="label">سيمانور · 30 ثانية</span>
+            ) : (
+              <Mono>SEMANOOR / 30s</Mono>
+            )}
             <span aria-hidden="true">·</span>
             {copy.hero.filmLabel}
           </p>

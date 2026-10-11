@@ -100,7 +100,11 @@ export default function SolutionDetail({ slug }: { slug: string }) {
               )}
               <figcaption className="frame__cap">
                 <span>{visual.alt[language]}</span>
-                <Mono>ILLUSTRATION</Mono>
+                {isRTL ? (
+                  <span className="label">رسم توضيحي</span>
+                ) : (
+                  <Mono>ILLUSTRATION</Mono>
+                )}
               </figcaption>
             </figure>
           </div>
