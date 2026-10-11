@@ -1,0 +1,36 @@
+{
+  "method": "Built standalone export checked on localhost with existing project dependency installation; external network blocked in browser. No fresh dependency installation or real-device/Safari test.",
+  "typescript": "passed",
+  "standaloneBuild": "passed",
+  "buildWarning": "Existing JavaScript chunk above500kB",
+  "cases": [
+    {
+      "language": "ar",
+      "home": true,
+      "partnersHidden": true,
+      "photoStripCount": 8,
+      "solutionCount": 4,
+      "videoPlayedAndFramesDecoded": true,
+      "libraryCount": 19,
+      "libraryPhotos": 8,
+      "libraryImagesLoaded": true,
+      "smartLearningRouteLoaded": true,
+      "pageErrors": []
+    },
+    {
+      "language": "en",
+      "home": true,
+      "partnersHidden": true,
+      "photoStripCount": 8,
+      "solutionCount": 4,
+      "videoPlayedAndFramesDecoded": true,
+      "libraryCount": 19,
+      "libraryPhotos": 8,
+      "libraryImagesLoaded": true,
+      "smartLearningRouteLoaded": true,
+      "pageErrors": []
+    }
+  ],
+  "originalSourceUnchanged": true,
+  "publicationPerformed": false
+}
