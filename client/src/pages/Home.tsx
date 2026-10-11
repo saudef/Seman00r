@@ -10,6 +10,7 @@ import Explorer from "@/components/Explorer";
 import Journey from "@/components/Journey";
 import ImpactSection from "@/components/ImpactSection";
 import Insights from "@/components/Insights";
+import ArchiveSection from "@/components/ArchiveSection";
 import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
       <Journey />
       <ImpactSection />
       <Insights />
+      <ArchiveSection />
       <ContactSection />
     </>
   );

@@ -13,7 +13,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Arrow, Button, SectionHead } from "./ui-kit";
 
 export default function Insights() {
-  const { copy, isRTL } = useLanguage();
+  const { copy, content, language, isRTL } = useLanguage();
   const [open, setOpen] = useState<number | null>(null);
   const insights = copy.insights;
   const article = open === null ? null : insights.cards[open];
@@ -27,31 +27,41 @@ export default function Insights() {
           lead={insights.intro}
         />
         <div className="articles">
-          {insights.cards.map((card, index) => (
-            <button
-              type="button"
-              className="article"
-              key={card.title}
-              onClick={() => setOpen(index)}
-            >
-              <div className="article__meta">
-                <span className="label">{card.category}</span>
-                <span className="pill pill--status">
-                  {card.status === "final"
-                    ? insights.statusFinal
-                    : insights.statusDraft}
-                </span>
-              </div>
-              <div className="article__body">
-                <h3 className="display-3">{card.title}</h3>
-                <p>{card.description}</p>
-              </div>
-              <span className="article__go" aria-hidden="true">
-                <Arrow size={18} />
-              </span>
-              <span className="sr-only">{insights.readLabel}</span>
-            </button>
-          ))}
+          {insights.cards.map((card, index) => {
+            const visual = content.visuals.insights[index];
+            return (
+              <button
+                type="button"
+                className={`article article--${index}`}
+                key={card.title}
+                onClick={() => setOpen(index)}
+              >
+                <div className="article__top">
+                  <span className="label">{card.category}</span>
+                  {card.status === "draft" && (
+                    <span className="pill pill--status">
+                      {insights.statusDraft}
+                    </span>
+                  )}
+                  <span className="article__go" aria-hidden="true">
+                    <Arrow size={18} />
+                  </span>
+                </div>
+                {visual?.image && (
+                  <img
+                    className="article__image"
+                    src={visual.image}
+                    alt={visual.alt[language]}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )}
+                <h3 className="display-4">{card.title}</h3>
+                <p className="article__text">{card.description}</p>
+                <small className="article__read">{insights.readLabel}</small>
+              </button>
+            );
+          })}
         </div>
       </div>
       <Dialog

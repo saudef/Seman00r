@@ -27,8 +27,8 @@ export default function SiteFooter() {
           </div>
           <div className="footer__col">
             <span className="label">{copy.contact.emailLabel}</span>
-            <a href={`mailto:${content.brand.email}`} dir="ltr">
-              {content.brand.email}
+            <a href={`mailto:${content.brand.email}`}>
+              <span dir="ltr">{content.brand.email}</span>
             </a>
             <p>{isRTL ? content.brand.city : "Riyadh, Saudi Arabia"}</p>
             {content.social.companyX && (
@@ -37,7 +37,7 @@ export default function SiteFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                X · @SemanoorKSA
+                <span dir="ltr">X · @SemanoorKSA</span>
               </a>
             )}
             <Link href="/studio" className="muted">

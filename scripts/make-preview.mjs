@@ -48,7 +48,7 @@ const fragment = [
   "<title>Semanoor Website Preview</title>",
   '<meta name="description" content="Private preview of the redesigned Semanoor website, Arabic and English." />',
   ...head,
-  "<style>:root{color-scheme:dark;background:#0f1011}body{margin:0}</style>",
+  "<style>:root{color-scheme:dark;background:#0c1a38}body{margin:0}</style>",
   '<div id="root"></div>',
 ].join("\n");
 writeFileSync(join(out, "page.html"), fragment);

@@ -1,5 +1,52 @@
 export const versions = [
   {
+    id: "local-navy-revision-20261011-21",
+    date: "11/10/2026",
+    time: "02:30 PM",
+    description:
+      "Review round one: Semanoor navy replaces the near-black canvas; focus areas and exploration fields become an icon-led strip; Insights returns to the original three-card grid and moves above the documentary archive; footer columns anchored and the email aligned in RTL.",
+    changes: [
+      {
+        file: "client/src/index.css",
+        lines: "tokens, signal, insights, archive, footer",
+        before:
+          "#0f1011 canvas; text-only strip; list-style insights; paper archive",
+        after:
+          "#0c1a38 navy canvas with screen-blended backdrops; icon tiles; card grid; archive on the navy canvas; footer grid anchored to both edges",
+      },
+      {
+        file: "client/src/components/SignalStrip.tsx",
+        lines: "1-end",
+        before: "Two rows of text chips",
+        after:
+          "Four focus-area tiles with their illustrations and six field tiles with Semanoor's line icons (client/src/data/fieldIcons.ts)",
+      },
+      {
+        file: "client/src/components/Insights.tsx",
+        lines: "1-end",
+        before: "Editorial list with status pill",
+        after:
+          "Three illustrated cards as in the original site; draft pill only when an article is a draft",
+      },
+      {
+        file: "client/src/components/ArchiveSection.tsx",
+        lines: "new",
+        before: "Archive carousel inside ImpactSection",
+        after: "Own section placed after Insights (Home.tsx order)",
+      },
+      {
+        file: "client/src/components/SiteFooter.tsx",
+        lines: "email + X links",
+        before: "Anchor with dir=ltr stretched and left-aligned in RTL",
+        after: "Inline LTR span inside a start-aligned anchor",
+      },
+    ],
+    screenshotBefore: "scratchpad/shots/final/ar-1440-insights.png",
+    screenshotAfter: "scratchpad/shots/rev/ar-1440-insights.png",
+    publicationStatus: "local-only-unpublished",
+    isCurrent: true,
+  },
+  {
     id: "local-origin-redesign-20261011-20",
     date: "11/10/2026",
     time: "12:00 PM",
@@ -40,7 +87,7 @@ export const versions = [
     screenshotBefore: "scratchpad/shots/before/en-desktop-fold.png",
     screenshotAfter: "scratchpad/shots/after1/en-desktop-fold.png",
     compliant: true,
-    isCurrent: true,
+    isCurrent: false,
     checkpointCreated: false,
     publicationStatus: "local-only-unpublished",
     baseCheckpoint: "7ad61ef7",
