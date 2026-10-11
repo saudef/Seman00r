@@ -11,7 +11,8 @@ export default function Hero() {
   const [loopFailed, setLoopFailed] = useState(false);
   const [loopReady, setLoopReady] = useState(false);
   useEffect(() => {
-    if (!atmosphere.loop || reduced) return;
+    if (!atmosphere.loop || reduced || import.meta.env.VITE_PREVIEW === "1")
+      return;
     let cancelled = false;
     fetch(atmosphere.loop, { method: "HEAD" })
       .then(response => {

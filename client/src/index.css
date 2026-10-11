@@ -48,6 +48,7 @@
 
 :root,
 .dark {
+  color-scheme: dark;
   --radius: 14px;
   /* canvas + surfaces */
   --canvas: #0f1011;

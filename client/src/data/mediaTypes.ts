@@ -40,7 +40,7 @@ export type SiteVisuals = {
 };
 export function safeImageUrl(value: string, allowEmpty = true): boolean {
   if (!value) return allowEmpty;
-  if (/^\/(manus-storage|site-assets|assets)\/[a-zA-Z0-9_./-]+$/.test(value))
+  if (/^\.?\/(manus-storage|site-assets|assets)\/[a-zA-Z0-9_./-]+$/.test(value))
     return !value.includes("..");
   if (/^data:image\/(?:png|jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(value))
     return value.length <= 1_500_000;
