@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { solutionCatalog } from "@/data/solutionCatalog";
 import Reveal from "./Reveal";
+import JawaniCard from "./JawaniCard";
 import { Arrow, Mono, SectionHead } from "./ui-kit";
 
 export const FOCUS_PALETTE = ["violet", "iris", "sky", "orchid"] as const;
@@ -22,14 +23,8 @@ export default function FocusModules() {
         <div className="modules">
           {copy.ecosystem.areas.map((area, index) => {
             const isJawani = index === 3;
-            const image = isJawani
-              ? "/site-assets/jawani-pay-card.webp"
-              : visuals[index].image;
-            const alt = isJawani
-              ? isRTL
-                ? "بطاقة جواني باي"
-                : "Jawani Pay card"
-              : visuals[index].alt[language];
+            const image = isJawani ? "card" : visuals[index].image;
+            const alt = isJawani ? "" : visuals[index].alt[language];
             return (
               <Reveal
                 as="article"
@@ -47,14 +42,7 @@ export default function FocusModules() {
                     className={`module__art ${isJawani ? "module__art--card" : ""}`}
                   >
                     {isJawani ? (
-                      <div className="bankcard">
-                        <img
-                          src={image}
-                          alt={alt}
-                          loading="lazy"
-                          decoding="async"
-                        />
-                      </div>
+                      <JawaniCard />
                     ) : (
                       <img
                         src={image}
